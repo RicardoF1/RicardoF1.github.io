@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Cada vez que alguien haga un push a la rama main, ejecuta este workflow.
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3 # clona el contenido del repositorio en el entorno del runner
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5   # Prepara el entorno para el despliegue en GitHub Pages.
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3  
+        with:
+          path: .                               # sube los archivos del sitio (HTML, CSS, JS, imágenes, etc.) como un artifact, que es básicamente un paquete temporal con los archivos que se van a desplegar.
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4     # Toma el artifact anterior y lo publica automáticamente en GitHub Pages.
