@@ -318,6 +318,11 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
+        <!-- Buscador de Proyectos -->
+        <div class="container mb-4">
+          <input type="text" id="buscador" class="form-control" placeholder="Buscar proyectos por nombre o descripción...">
+        </div>
+
         <h2>Proyectos</h2>
         <p>Muestra una selección de mis proyectos personales y profesionales en desarrollo web y diseño de interfaces. 
           Aquí podrás explorar algunas de mis creaciones, que reflejan mi capacidad para desarrollar soluciones digitales atractivas y funcionales.</p>
@@ -335,11 +340,11 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portafolioo.jpeg" class="img-fluid" alt="">
+                <img src="assets/img/portafolio.png" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Portafolio</h4>
                   <p>Portafolio hecho con bootstrap, Html y Css</p>
-                  <a href="assets/img/portafolioo.jpeg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portafolio.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="index.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -471,6 +476,25 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    const inputBuscador = document.getElementById("buscador");
+    const proyectos = document.querySelectorAll(".portfolio-item");
+  
+    function buscarProyectos(texto) {
+      const query = texto.toLowerCase();
+      proyectos.forEach((item) => {
+        const titulo = item.querySelector("h4").innerText.toLowerCase();
+        const descripcion = item.querySelector("p").innerText.toLowerCase();
+        const visible = titulo.includes(query) || descripcion.includes(query);
+        item.style.display = visible ? "block" : "none";
+      });
+    }
+  
+    inputBuscador.addEventListener("input", (e) => {
+      buscarProyectos(e.target.value);
+    });
+  </script>
 
 </body>
 
