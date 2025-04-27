@@ -22,6 +22,8 @@ jobs:
 
       - name: Instalar dependencias
         run: npm install
+        working-directory: ./Portafolios/Flores_toribio
 
       - name: Ejecutar pruebas
         run: npm test
+        working-directory: ./Portafolios/Flores_toribio
