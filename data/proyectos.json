@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "nombre": "Portafolio",
+      "descripcion": "Este es un proyecto simple que se realizo la creacion de portafolio personal.",
+      "tecnologias": ["HTML", "CSS", "JavaScript"],
+      "enlace": "https://ricardof1.github.io/"
+    },
+    {
+      "id": 2,
+      "nombre": "Ecoambiental Group",
+      "descripcion": "Un proyecto que se realizo en mis practicas.",
+      "tecnologias": ["Angular", "Node.js", "TypeScript", "Nestjs", "JavaScript", "CSS","HTML"],
+      "enlace": "https://ecoambientalgroup.com"
+    },
+    {
+        "id": 3,
+        "nombre": "Proyecto 3",
+        "descripcion": "Este es un proyecto de ejemplo.",
+        "tecnologias": ["HTML", "CSS", "JavaScript"],
+        "enlace": "https://ricardof1.github.io/"
+      },
+      {
+        "id": 4,
+        "nombre": "Proyecto 4",
+        "descripcion": "Este es otro proyecto de ejemplo.",
+        "tecnologias": ["React", "Node.js", "Express"],
+        "enlace": "https://ricardof1.github.io/"
+      },
+      {
+        "id": 5,
+        "nombre": "Proyecto 5",
+        "descripcion": "Este es un proyecto de ejemplo.",
+        "tecnologias": ["HTML", "CSS", "JavaScript"],
+        "enlace": "https://ricardof1.github.io/"
+      },
+      {
+        "id": 6,
+        "nombre": "Proyecto 6",
+        "descripcion": "Este es otro proyecto de ejemplo.",
+        "tecnologias": ["React", "Node.js", "Express"],
+        "enlace": "https://ricardof1.github.io/"
+      }
+  ]
+  
